@@ -1,0 +1,39 @@
+# 📝 Django To-Do List App
+
+A simple **To-Do List web application** built using **Django** where users can **create, update, delete, and manage tasks**. It also supports **user authentication** for personalized task management.
+
+## 🚀 Features
+
+- ✅ **User Authentication** (Login, Register, Logout)
+- 📌 **Create, Read, Update, Delete (CRUD) Tasks**
+- 🔍 **Search Tasks**
+- 🎨 **Responsive UI with Bootstrap**
+- 📝 **Task Completion Status**
+- 🔄 **Drag & Drop Task Reordering**
+- 📦 **Django ORM for Database Management**
+
+---
+
+## 🛠️ Tech Stack
+
+- **Backend:** Django (Python)
+- **Frontend:** HTML, CSS, Bootstrap
+- **Database:** SQLite (Django ORM)
+- **Authentication:** Django's built-in auth system
+
+---
+
+
+
+Create Virtual Environment & Install Dependencies :-
+python -m venv env
+source env/bin/activate  # On Windows use 
+
+
+Apply Migrations & Run the Server :-
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+
+Open in Browser :- 
+Go to http://127.0.0.1:8000/ and start using the app!

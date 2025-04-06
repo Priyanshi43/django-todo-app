@@ -1,0 +1,50 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <h1>Register</h1>
+</div>
+
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.username.label_tag }} {{ form.username }}
+
+        {{ form.password1.label_tag }} 
+        <div style="display: flex; align-items: center;">
+            {{ form.password1 }}
+            <button type="button" onclick="togglePassword('{{ form.password1.id_for_label }}')" 
+                style="margin-left: 10px; border: none; background: none; cursor: pointer;">
+                <span id="toggleEye_{{ form.password1.id_for_label }}">👁️‍🗨️</span>
+            </button>
+        </div>
+
+        {{ form.password2.label_tag }} 
+        <div style="display: flex; align-items: center;">
+            {{ form.password2 }}
+            <button type="button" onclick="togglePassword('{{ form.password2.id_for_label }}')" 
+                style="margin-left: 10px; border: none; background: none; cursor: pointer;">
+                <span id="toggleEye_{{ form.password2.id_for_label }}">👁️‍🗨️</span>
+            </button>
+        </div>
+
+        <button class="button" type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+</div>
+
+<script>
+    function togglePassword(fieldId) {
+        var field = document.getElementById(fieldId);
+        var eyeIcon = document.getElementById("toggleEye_" + fieldId);
+        if (field.type === "password") {
+            field.type = "text";
+            eyeIcon.innerHTML = "👁️"; // Open Eye
+        } else {
+            field.type = "password";
+            eyeIcon.innerHTML = "👁️‍🗨️"; // Closed Eye
+        }
+    }
+</script>
+
+{% endblock content %}
